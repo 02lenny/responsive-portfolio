@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  data-color-mode="light">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Lenny May Ilandag's portfolio showcasing design and development skills.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenny May Ilandag Portfolio</title>
+    <title>lenny</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;300;400;700&display=swap" rel="stylesheet">
@@ -15,6 +15,45 @@
             <div class="progress-bar" id="progress-bar"></div>
         </div>
     </div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <button class="logo" onclick="scrollToTop()" aria-label="Scroll to top">lenny</button>
+          
+            <svg style="display: none;">
+              <symbol viewBox="0 0 24 24" id="color_mode_control_icon_sun">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </symbol>
+              <symbol viewBox="0 0 24 24" id="color_mode_control_icon_moon">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </symbol>
+            </svg>
+          
+            <div id="darkModeToggle">
+              <button class="color_mode_button hidden_in_light_mode" id="enable_light_mode">
+                <svg>
+                  <title>Light mode</title>
+                  <use href="#color_mode_control_icon_sun"></use>
+                </svg>
+              </button>
+              <button class="color_mode_button hidden_in_dark_mode" id="enable_dark_mode">
+                <svg>
+                  <title>Dark mode</title>
+                  <use href="#color_mode_control_icon_moon"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+      </nav>
+
     <main class="main-wrapper">
         <!-- Hero Section -->
         <header class="hero">
@@ -73,7 +112,7 @@
                     <p class="skill-text">BRAND-SAVVY</p>
                 </div>
             </div>
-            <div class="footer">
+            <div class="skills-footer">
                 <p>The foundation of every great project.</p>
 
             </div>
@@ -81,32 +120,65 @@
 
         <!-- Projects Section -->
         <section class="projects">
-            <div class="projects-header">
-                <h2 class="projects-title">THE ART OF THE OUTCOME</h2>
-                <p class="projects-description">A glimpse into my world of design and development.</p>
+            <div class="project-wrapper">
+                <div class="projects-header">
+                    <h2 class="projects-title">THE ART OF THE OUTCOME</h2>
+                    <p class="projects-description">A glimpse into my world of design.</p>
+                </div>
+                <div class="scroll-container">
+                    <div class="image-wrapper">
+                        <img src="images\Intramurals2025.png" alt="Iskolaro 2025">
+                        <div class="image-text">Iskolaro 2025</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images\Sci Month Poster.png" alt="Science Month 2025">
+                        <div class="image-text">Science Month 2025</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images\W3_VALO Casters.png" alt="CESAFI Esports League">
+                        <div class="image-text">CESAFI Esports League</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images\Poster.png" alt="Komsai Booth Poster">
+                        <div class="image-text">Komsai Booth Poster</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images\Trophy.png" alt="Komsai Week Trophy">
+                        <div class="image-text">Komsai Week Trophy</div>
+                    </div>
+                  </div>
             </div>
-            <div class="scroll-container">
-                <div class="image-wrapper">
-                    <img src="images\Intramurals2025.png" alt="Iskolaro 2025">
-                    <div class="image-text">Iskolaro 2025</div>
+            <div class="project2-wrapper">
+                <h2 class="project2-title">and more...</h2>
+                <div class="card">
+                    <img src="images\Siomeow.png" alt="Siomeow Legends">
+                    <div class="card-info">
+                        <h3>Siomeow Legends</h3>
+                        <p>Co-developer of Siomeow Legends — a chaotic, cat-fueled deathmatch where only the fiercest feline survives.</p>
+                    </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="images\Sci Month Poster.png" alt="Science Month 2025">
-                    <div class="image-text">Science Month 2025</div>
+                <div class="card">
+                    <img src="images\BeyondtheMirage.png" alt="Cinque Terre">
+                    <div class="card-info">
+                        <h3>Beyond the Mirage</h3>
+                        <p>Co-developer of Beyond the Mirage — a historical top-down RPG set in Cebu, uncovering hidden truths of the Marcos Era through real stories and player-driven choices.</p>
+                    </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="images\W3_VALO Casters.png" alt="CESAFI Esports League">
-                    <div class="image-text">CESAFI Esports League</div>
+                <div class="card">
+                    <img src="images\HoneyOS.png" alt="HoneyOS">
+                    <div class="card-info">
+                        <h3>BeeBot</h3>
+                        <p>Co-developer and designer of BeeBot, an operating system simulator with built-in voice recognition — merging functionality with intuitive design for a smarter, hands-free user experience.</p>
+                    </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="images/profile.jpg" alt="Cinque Terre">
-                    <div class="image-text">Cinque Terre</div>
+                <div class="card">
+                    <img src="images\Arnis Chronicles.png" alt="Arnis Chronicles">
+                    <div class="card-info">
+                        <h3>Arnis Chronicles</h3>
+                        <p>Designer of Arnis Chronicles — a digital archive and hub celebrating Arnis athletes, preserving their stories, stats, and legacies through a clean, accessible web experience.</p>
+                    </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="images/profile.jpg" alt="Cinque Terre">
-                    <div class="image-text">Cinque Terre</div>
-                </div>
-              </div>
+            </div>
         </section>
     </main>
 
@@ -117,13 +189,21 @@
             <p class="socials">Socials</p>
             <div class="social-icons">
                 <a href="https://instagram.com" target="_blank">
-                    <img src="images\iconoir_instagram.svg" alt="Instagram">
+                    <svg class="social-icons instagram" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M35 46.6668C38.0942 46.6668 41.0617 45.4377 43.2496 43.2497C45.4375 41.0618 46.6667 38.0944 46.6667 35.0002C46.6667 31.906 45.4375 28.9385 43.2496 26.7506C41.0617 24.5627 38.0942 23.3335 35 23.3335C31.9058 23.3335 28.9384 24.5627 26.7505 26.7506C24.5625 28.9385 23.3334 31.906 23.3334 35.0002C23.3334 38.0944 24.5625 41.0618 26.7505 43.2497C28.9384 45.4377 31.9058 46.6668 35 46.6668Z" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.75 46.6667V23.3333C8.75 19.4656 10.2865 15.7563 13.0214 13.0214C15.7563 10.2865 19.4656 8.75 23.3333 8.75H46.6667C50.5344 8.75 54.2437 10.2865 56.9786 13.0214C59.7135 15.7563 61.25 19.4656 61.25 23.3333V46.6667C61.25 50.5344 59.7135 54.2437 56.9786 56.9786C54.2437 59.7135 50.5344 61.25 46.6667 61.25H23.3333C19.4656 61.25 15.7563 59.7135 13.0214 56.9786C10.2865 54.2437 8.75 50.5344 8.75 46.6667Z" stroke-width="3.5"/>
+                        <path d="M51.0417 18.9877L51.0709 18.9556" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </a>
                 <a href="https://facebook.com" target="_blank">
-                    <img src="images\la_facebook.svg" alt="Facebook">
+                    <svg class="social-icons facebook" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M35 8.75C20.5275 8.75 8.75 20.5275 8.75 35C8.75 49.4725 20.5275 61.25 35 61.25C49.4725 61.25 61.25 49.4725 61.25 35C61.25 20.5275 49.4725 8.75 35 8.75ZM35 13.125C47.1078 13.125 56.875 22.8922 56.875 35C56.879 40.2364 55.0006 45.2998 51.5826 49.2668C48.1645 53.2338 43.4345 55.8401 38.255 56.6103V41.3787H44.485L45.4628 35.0503H38.255V31.5941C38.255 28.9691 39.1191 26.635 41.5756 26.635H45.5241V21.1138C44.8306 21.0197 43.3628 20.8162 40.5891 20.8162C34.7966 20.8162 31.4016 23.8744 31.4016 30.8438V35.0503H25.4472V41.3787H31.4016V56.5556C26.2932 55.7148 21.6502 53.0851 18.3021 49.1364C14.9541 45.1876 13.1191 40.1771 13.125 35C13.125 22.8922 22.8922 13.125 35 13.125Z"/>
+                    </svg>
                 </a>
                 <a href="https://linkedin.com" target="_blank">
-                    <img src="images\mdi_linkedin.svg" alt="LinkedIn">
+                    <svg class="social-icons linkedin" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M55.4167 8.75C56.9638 8.75 58.4475 9.36458 59.5415 10.4585C60.6354 11.5525 61.25 13.0362 61.25 14.5833V55.4167C61.25 56.9638 60.6354 58.4475 59.5415 59.5415C58.4475 60.6354 56.9638 61.25 55.4167 61.25H14.5833C13.0362 61.25 11.5525 60.6354 10.4585 59.5415C9.36458 58.4475 8.75 56.9638 8.75 55.4167V14.5833C8.75 13.0362 9.36458 11.5525 10.4585 10.4585C11.5525 9.36458 13.0362 8.75 14.5833 8.75H55.4167ZM53.9583 53.9583V38.5C53.9583 35.9782 52.9566 33.5598 51.1734 31.7766C49.3902 29.9934 46.9718 28.9917 44.45 28.9917C41.9708 28.9917 39.0833 30.5083 37.6833 32.7833V29.5458H29.5458V53.9583H37.6833V39.5792C37.6833 37.3333 39.4917 35.4958 41.7375 35.4958C42.8205 35.4958 43.8591 35.926 44.6249 36.6918C45.3906 37.4576 45.8208 38.4962 45.8208 39.5792V53.9583H53.9583ZM20.0667 24.9667C21.3662 24.9667 22.6126 24.4504 23.5315 23.5315C24.4504 22.6126 24.9667 21.3662 24.9667 20.0667C24.9667 17.3542 22.7792 15.1375 20.0667 15.1375C18.7594 15.1375 17.5056 15.6568 16.5812 16.5812C15.6568 17.5056 15.1375 18.7594 15.1375 20.0667C15.1375 22.7792 17.3542 24.9667 20.0667 24.9667ZM24.1208 53.9583V29.5458H16.0417V53.9583H24.1208Z"/>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -138,5 +218,12 @@
         </form>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <hr class="footer-line">
+        <p class="footer-text">© 2025 Lenny May Ilandag. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
