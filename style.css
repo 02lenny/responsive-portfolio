@@ -1,8 +1,6 @@
 :root {
     --background-color: #fcfaf8; /* Light mode background color */
     --text-color: black; /* Default text color */
-    --viewport-width: 390px;
-    --viewport-height: 844px;
     --wrapper-width: 390px;
     --wrapper-height: 844px;
 }
@@ -27,6 +25,63 @@ body::before {
     z-index: -1;
 }
 
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    animation: fadeInOut 3s linear forwards;
+}
+
+.progress-container {
+    position: relative;
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    animation: fadeInOut 2.5s linear forwards;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-color);
+    animation: fillBar 2s linear forwards;
+}
+
+/* Progress bar animation (grows upwards) */
+@keyframes fillBar {
+    0% {
+        height: 1px;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 main {
     z-index: 1;
     background: url("images/Background.svg") center center/cover fixed, var(--background-color);
@@ -39,9 +94,7 @@ main {
 
 /* Hero Section */
 .hero {
-    height: 100%;
-    min-height: 100vh;
-    position: relative;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -53,7 +106,6 @@ main {
 
 .hero-content {
     padding: calc(var(--wrapper-width)* .07143);
-    border-radius: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -78,18 +130,17 @@ main {
     animation: fadeIn 0.3s forwards, typing var(--duration) steps(var(--n)) forwards;
 }
 
-/* Individual line delays */
 .line1 {
     --duration: 2.3s;
-    animation-delay: 0s;
+    animation-delay: 2s;
 }
 .line2 {
     --duration: 2.5s;
-    animation-delay: 2s;
+    animation-delay: 4s;
 }
 .line3 {
     --duration: 2.5s;
-    animation-delay: 4.2s;
+    animation-delay: 6.2s;
 }
 
 @keyframes typing {
@@ -134,10 +185,12 @@ h1 {
     font-weight: 500;
     margin: 0;
     animation: slide-in-bottom 1.5s both;
+    animation-delay: 3s;
 }
 
 .name {
     animation: slide-in-bottom 1s both;
+    animation-delay: 3s;
 }
 
 @keyframes slide-in-bottom {
@@ -223,6 +276,7 @@ h2 {
 .skills-header h2 {
     font-size: 10vw;
     font-weight: bold;
+    color: var(--text-color);
 }
 
 .tools,
@@ -400,6 +454,7 @@ h2 {
     animation: neonPulse 3s infinite alternate;
 }
 .footer p {
+    color: var(--text-color);
     font-size: 20px;
     font-weight: 600;
     text-align: center;
@@ -452,6 +507,7 @@ h2 {
     flex-shrink: 0; /* Prevents the header from shrinking */
     width: 50%; /* Sets a width for the header */
     padding-right: 50px;
+    color: var(--text-color);
 }
 
 .projects-title {
@@ -529,6 +585,7 @@ h2 {
     padding: calc(var(--wrapper-width)* .07143);
     gap: calc(var(--wrapper-width)* .07143);
     overflow-x: auto; /* Enables horizontal scrolling */
+    justify-content: center;
 }
 
 .contact-header {
@@ -628,11 +685,6 @@ button:hover {
 
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
-    .hero {
-        height: 100vh;
-        background-size: 70%;
-    }
-
     .hero-content {
         width: 100%;
     }
@@ -679,7 +731,7 @@ button:hover {
 
     .image-wrapper img {
         width: 100%;
-        height: 500px;
+        height: auto;
     }
 
     .skill .icon {
@@ -724,7 +776,7 @@ button:hover {
 
     .scroll-container img {
         width: 100%;
-        height: 500px;
+        height: auto;
     }
 
     .projects,
@@ -745,49 +797,15 @@ button:hover {
         margin: 0;
     }
 }
+
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
-    body {
-        background: #fcfaf8;
-        color: black;
-    }
-
-    main {
-        background: url("images/Background.svg") center center/cover fixed, black;
-    }
-
-    .hero, .type, .projects , .skills, .skill-text{
-        color: #fcfaf8;
-    }
-
-
-    .skills-image, .contact{
-        color: black;
-    }
-
-    .skill .icon {
-        stroke: #fcfaf8;
-    }
-
-    input, textarea {
-        border-color: black;
-    }
-
-    button {
-        background: black;
-        color: #fcfaf8;
+    :root {
+        --background-color: black;
+        --text-color: #fcfaf8;
     }
 
     .social-icons {
         filter: invert(100%);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: gray; /* Scrollbar thumb color */
-        border-radius: 10px; /* Rounded edges */
-    }
-    
-    ::-webkit-scrollbar-track {
-        background-color: transparent; /* Scrollbar track color */
     }
 }
